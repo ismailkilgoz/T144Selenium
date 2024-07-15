@@ -14,6 +14,7 @@ public class C03_DriverManageTimeoutsMethodlari {
         driver.manage().window().fullscreen();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
+        driver.get("https://www.testotomasyonu.com");
 
 
         /*
@@ -33,6 +34,19 @@ public class C03_DriverManageTimeoutsMethodlari {
             ve hiz acisindan da beklemeyi mecbur kilan bir durum yoksa
             Thread.sleep()'leri silmekte fayda vardir.
 
+         */
+        /*
+            implicitlyWait farkli olarak goreve dayali beklemeyi yapar
+
+            biz 10 saniye tanimladigimizda
+            gorevi yapmak icin max 10 saniye bekler
+            daha erken biterse yoluna devam eder, 10 saniyenin dolmasini beklemez
+            ANCAK 10 saniye dolmasina ragmen gorev bitmedi ise
+            exception firlatir ve calismayi durdurur
+
+            implicitlyWait iki temel gorev icin bekleme yapar
+            1- sayfanin acilip, ogelerin yuklenmesi
+            2- herhangi bir ogeyi kullanmamiz gerektiginde o ogeyi bulmak
          */
 
         driver.quit();
